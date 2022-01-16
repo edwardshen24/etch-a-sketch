@@ -4,6 +4,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: grey;
     
 }
 
@@ -14,7 +15,8 @@ body{
     display: grid;
     border:2px solid black;
     grid-template-columns: repeat(16, 1fr);
-
+    background-color: white;
+    margin-bottom: 5px;
 }
 
 button{
@@ -31,3 +33,21 @@ button{
     background-color: white;
     border-radius: 20%;
 }
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #04AA6D;
+    cursor: grab;
+  }
+
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 20px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    transition: opacity .2s;
+  }

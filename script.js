@@ -1,9 +1,12 @@
 const container = document.getElementById("container");
 const cell = document.getElementById("cell");
-const rstBtn = document.getElementById("resetButton")
+const demo = document.getElementById("dimensions");
 const rainbow = document.getElementById("rainbow");
 const singleColor = document.getElementById("singleColor");
-const buttons = document.querySelectorAll("button");
+const slider = document.getElementById("myRange");
+const slideContainer = document.getElementById("slidecontainer");
+const eraser = document.getElementById("eraser");
+
 let n = 16;
 
 drawGrid();
@@ -27,15 +30,6 @@ container.addEventListener('mouseover', e => {
         container.style.backgroundColor = "white";
 });
 
-rstBtn.addEventListener("click", function() {
-    let newGrid = prompt("Enter the new desired grid size, with a maximum of 100 pixels", "16");
-    if (!isNaN(newGrid) && newGrid <= 100 && newGrid >= 1)
-        n = newGrid;
-    removeGrid(container);
-    drawGrid();
-    container.style.setProperty('grid-template-columns', 'repeat(' + n + ', 1fr)');
-}); 
-
 rainbow.addEventListener("click", function() {
     container.addEventListener('mouseover', e => {
         let randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
@@ -53,3 +47,19 @@ function test(t) {
     }); 
 }
 
+eraser.addEventListener("click", function() {
+    container.addEventListener('mouseover', e => {
+        e.target.style.backgroundColor = "white";
+        container.style.backgroundColor = "white";
+    });
+}); 
+
+
+slider.addEventListener("mouseup", function() {
+    n = slider.value;
+    removeGrid(container);
+    drawGrid();
+    container.style.setProperty('grid-template-columns', 'repeat(' + n + ', 1fr)');
+    demo.textContent = "Dimensions: " + n + "px x "+ n + "px";
+    slideContainer.appendChild(demo);
+}); 

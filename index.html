@@ -13,9 +13,13 @@
     <div class = "buttonContainer">
         <button id="singleColor">Single Color</button>
         <input type="color" id="colorSelector" value="#ffffff" onchange="test(this)" onkeyup="test(this)" />
-        <button id="resetButton">Reset</button>
         <button id="rainbow">Rainbow</button>
+        <button id="eraser">Eraser</button>
     </div>
     <div id="container"></div>
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <div id = "dimensions"></div>
+    </div>
 </body>
 </html>
