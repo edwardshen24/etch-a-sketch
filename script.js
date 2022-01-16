@@ -1,6 +1,8 @@
 const container = document.getElementById("container");
 const cell = document.getElementById("cell");
 const rstBtn = document.getElementById("resetButton")
+const rainbow = document.getElementById("rainbow");
+const singleColor = document.getElementById("singleColor");
 let n = 16;
 
 drawGrid();
@@ -19,10 +21,9 @@ function removeGrid(parent){
     }
 }
 
-
 container.addEventListener('mouseover', e => {
-        e.target.style.backgroundColor = "black"
-        container.style.backgroundColor = "white"
+        e.target.style.backgroundColor = "black";
+        container.style.backgroundColor = "white";
 });
 
 rstBtn.addEventListener("click", function() {
@@ -33,3 +34,22 @@ rstBtn.addEventListener("click", function() {
     drawGrid();
     container.style.setProperty('grid-template-columns', 'repeat(' + n + ', 1fr)');
 }); 
+
+rainbow.addEventListener("click", function() {
+    container.addEventListener('mouseover', e => {
+        let randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+        e.target.style.backgroundColor = randomColor;
+        container.style.backgroundColor = "white";
+    });
+}); 
+
+singleColor.addEventListener("click", function() {
+    container.addEventListener('mouseover', e => {
+        e.target.style.backgroundColor = colorSelected();
+        container.style.backgroundColor = "white";
+    });
+}); 
+
+function colorSelected (element) {
+    e.target.style.backgroundColor = element.value;
+}
