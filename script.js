@@ -1,14 +1,15 @@
 const container = document.getElementById("container");
+const cell = document.getElementById("cell");
 let n = 16;
 
 for (i = 0; i< n*n; i++){
     const div = document.createElement("div");
-    div.setAttribute("class", "cell");
+    div.setAttribute("id", "cell");
     container.appendChild(div);
 }
 
-document.querySelectorAll("#container").forEach(() => {
-    document.querySelector(".cell").addEventListener("mouseover", function() {
-        document.querySelector(".cell").style.backgroundColor = "black";
-    });
+container.addEventListener('mouseover', e => {
+        e.target.style.backgroundColor = "black"
+        container.style.backgroundColor = "white"
 });
+
