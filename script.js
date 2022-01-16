@@ -3,6 +3,7 @@ const cell = document.getElementById("cell");
 const rstBtn = document.getElementById("resetButton")
 const rainbow = document.getElementById("rainbow");
 const singleColor = document.getElementById("singleColor");
+const buttons = document.querySelectorAll("button");
 let n = 16;
 
 drawGrid();
@@ -43,13 +44,12 @@ rainbow.addEventListener("click", function() {
     });
 }); 
 
-singleColor.addEventListener("click", function() {
-    container.addEventListener('mouseover', e => {
-        e.target.style.backgroundColor = colorSelected();
-        container.style.backgroundColor = "white";
-    });
-}); 
-
-function colorSelected (element) {
-    e.target.style.backgroundColor = element.value;
+function test(t) {
+    singleColor.addEventListener("click", function() {
+        container.addEventListener('mouseover', e => {
+            e.target.style.backgroundColor = t.value;
+            container.style.backgroundColor = "white";
+        });
+    }); 
 }
+

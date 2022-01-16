@@ -12,9 +12,7 @@
     <h1>Etch-A-Sketch</h1>
     <div class = "buttonContainer">
         <button id="singleColor">Single Color</button>
-        <div>
-            Pick a color <input onchange="colorSelected(this)" type="color">
-        </div>
+        <input type="color" id="colorSelector" value="#ffffff" onchange="test(this)" onkeyup="test(this)" />
         <button id="resetButton">Reset</button>
         <button id="rainbow">Rainbow</button>
     </div>

@@ -26,3 +26,8 @@ button{
     display: flex;
     align-items: baseline;
 }
+
+#colorSelector{
+    background-color: white;
+    border-radius: 20%;
+}
