@@ -31,4 +31,5 @@ rstBtn.addEventListener("click", function() {
         n = newGrid;
     removeGrid(container);
     drawGrid();
+    container.style.setProperty('grid-template-columns', 'repeat(' + n + ', 1fr)');
 }); 
